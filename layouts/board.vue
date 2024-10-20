@@ -265,6 +265,7 @@
 </template>
 
 <script setup>
+console.log('fffff')
 // import
 
 useHead({
