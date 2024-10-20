@@ -79,7 +79,15 @@
                     <a-menu-item key="1">
                       <h5
                         class="font-semibold mb-0 w-full"
-                        @click="router.push('/order/list')"
+                        @click="
+                          () => {
+                            if (marketUserIsLoggedIn) {
+                              router.push('/order/list');
+                            } else {
+                              loginModal = true;
+                            }
+                          }
+                        "
                       >
                         Order list
                       </h5>
@@ -234,6 +242,7 @@
                 @click="
                   () => {
                     openCart = false;
+
                     router.push('/order/create');
                   }
                 "
@@ -265,7 +274,6 @@
 </template>
 
 <script setup>
-console.log('fffff')
 // import
 
 useHead({
