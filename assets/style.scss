@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.error{
+    color:rgb(160, 44, 44);
+    margin-bottom: 10px;
+}
+
+.center-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+    display: inline-block;
+    margin: 0 8px;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.215em solid transparent;
+    vertical-align: middle;
+    font-size: 14px;
+    border-top-color: rgb(158, 61, 61);
+    animation: spin 1s cubic-bezier(0.55, 0.15, 0.45, 0.85) infinite;
+  }
+  
+
+
+  /* HTML: <div class="loader"></div> */
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    position: relative;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -8px 0 0 -8px;
+    width: 16px;
+    aspect-ratio: 1;
+    background: #3FB8AF;
+    animation:
+      l1-1 2s  infinite,
+      l1-2 .5s infinite;
+  }
+  .loader:after {
+    background:#FF3D7F;
+    animation-delay: -1s,0s;
+  }
+  @keyframes l1-1 {
+    0%   {top:0   ;left:0}
+    25%  {top:100%;left:0}
+    50%  {top:100%;left:100%}
+    75%  {top:0   ;left:100%}
+    100% {top:0   ;left:0}
+  }
+  @keyframes l1-2 {
+     80%,100% {transform: rotate(0.5turn)}
+  }
+
+
+//   or
+/* HTML: <div class="loader"></div> */
+// .loader {
+//     width: 60px;
+//     aspect-ratio: 2;
+//     --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+//     background: 
+//       var(--_g) 0%   50%,
+//       var(--_g) 50%  50%,
+//       var(--_g) 100% 50%;
+//     background-size: calc(100%/3) 50%;
+//     animation: l3 1s infinite linear;
+//   }
+//   @keyframes l3 {
+//       20%{background-position:0%   0%, 50%  50%,100%  50%}
+//       40%{background-position:0% 100%, 50%   0%,100%  50%}
+//       60%{background-position:0%  50%, 50% 100%,100%   0%}
+//       80%{background-position:0%  50%, 50%  50%,100% 100%}
+//   }
